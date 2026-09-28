@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SecureWebApp</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        .header {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .security-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .security-card h3 {
+            margin-top: 0;
+            color: #1f2937;
+        }
+
+        .status {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .logout {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #dc2626;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .logout:hover {
+            background: #b91c1c;
+        }
+
+        @media (max-width: 600px) {
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>🔐 SecureWebApp</h1>
+        <p>Cybersecurity Dashboard</p>
+    </div>
+
+    <div class="container">
+
+        <div class="welcome">
+            <h2>Welcome, {{ username }}!</h2>
+
+            <p>
+                You are successfully authenticated.
+            </p>
+        </div>
+
+        <h2>Security Controls</h2>
+
+        <div class="security-grid">
+
+            <div class="security-card">
+                <h3>SQL Injection</h3>
+                <p class="status">✓ Protected</p>
+                <p>Parameterized SQL queries are used.</p>
+            </div>
+
+            <div class="security-card">
+                <h3>Password Security</h3>
+                <p class="status">✓ Protected</p>
+                <p>Passwords are stored using secure hashing.</p>
+            </div>
+
+            <div class="security-card">
+                <h3>CSRF Protection</h3>
+                <p class="status">✓ Enabled</p>
+                <p>Forms require a valid CSRF token.</p>
+            </div>
+
+            <div class="security-card">
+                <h3>Rate Limiting</h3>
+                <p class="status">✓ Enabled</p>
+                <p>Login attempts are limited to 5 per minute.</p>
+            </div>
+
+            <div class="security-card">
+                <h3>Session Security</h3>
+                <p class="status">✓ Enabled</p>
+                <p>HttpOnly and SameSite cookie settings are enabled.</p>
+            </div>
+
+            <div class="security-card">
+                <h3>Security Logging</h3>
+                <p class="status">✓ Enabled</p>
+                <p>Authentication and security events are logged.</p>
+            </div>
+
+        </div>
+
+        <a class="logout" href="/logout">Logout</a>
+
+    </div>
+
+</body>
+</html>
